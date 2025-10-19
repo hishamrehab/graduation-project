@@ -184,11 +184,11 @@ const Chat = () => {
             <div className="h-full flex flex-col items-center justify-center p-4">
               <img src={logo} alt='' className='mb-3'/>
               <div className="text-center mb-12 animate-fade-in">
-                <h1 className="text-3xl lg:text-4xl font-bold text-gray-800 dark:text-white mb-3">
-                  مرحباً بك في المساعد الذكي للمعهد
+                <h1 className="text-3xl lg:text-4xl font-bold text-gray-800 dark:text-white mb-3 loading-10">
+                  مرحباً بك في المساعد الذكي للمعهد العالي للهندسه والتكنولوجيا بطنطا
                 </h1>
                 <p className="text-xl lg:text-2xl text-gray-600 dark:text-gray-400">
-                  كيف يمكنني مساعدتك اليوم؟
+                  كيف يمكنني مساعدتك ؟
                 </p>
               </div>
 
