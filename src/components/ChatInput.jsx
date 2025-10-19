@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Plus, ArrowUp, X, FileText } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const ChatInput = ({ onSend, disabled = false, placeholder = "اسأل عن أي شيء", centered = false, isSidebarOpen = true }) => {
   const [message, setMessage] = useState('');
@@ -32,10 +33,13 @@ const ChatInput = ({ onSend, disabled = false, placeholder = "اسأل عن أي
   };
 
   return (
-    <div className={` bg-gradient-to-t from-gray-50 dark:from-gray-900 via-gray-50 dark:via-gray-900 to-transparent pt-8 pb-6 px-4 transition-all duration-300 ease-out ${ isSidebarOpen ? 'lg:right-72' : 'lg:right-20'} right-14`}>
+    <div className={`fixed left-0 bg-gradient-to-t from-gray-50 dark:from-gray-900 via-gray-50 dark:via-gray-900 to-transparent pt-8 pb-6 px-4 transition-all duration-300 ease-out ${
+      centered ? 'top-[75%] -translate-y-1/2' : 'bottom-0'
+    } ${
+      isSidebarOpen ? 'lg:right-72' : 'lg:right-20'
+    } right-14`}>
       <form onSubmit={handleSubmit} className="w-full max-w-4xl mx-auto">
         {/* Selected Files */}
-        
         {selectedFiles.length > 0 && (
           <div className="mb-3 flex flex-wrap gap-2">
             {selectedFiles.map((file, index) => (
@@ -58,6 +62,7 @@ const ChatInput = ({ onSend, disabled = false, placeholder = "اسأل عن أي
         )}
 
         {/* Input Container */}
+        <Link to="/login">
         <div className="relative bg-primary rounded-full shadow-2xl flex items-center gap-3 px-6 py-4">
           {/* File Upload Button */}
           <input
@@ -78,6 +83,7 @@ const ChatInput = ({ onSend, disabled = false, placeholder = "اسأل عن أي
           </button>
 
           {/* Input Field */}
+       
           <input
             type="text"
             value={message}
@@ -85,7 +91,7 @@ const ChatInput = ({ onSend, disabled = false, placeholder = "اسأل عن أي
             onKeyPress={handleKeyPress}
             placeholder={placeholder}
             disabled={disabled}
-           className="flex-1 bg-transparent text-white placeholder-white placeholder-opacity-80 text-base lg:text-lg outline-none border-none focus:outline-none focus:ring-0"
+            className="flex-1 bg-transparent text-white placeholder-white placeholder-opacity-80 text-base lg:text-lg outline-none"
           />
 
           {/* Send Button */}
@@ -96,7 +102,10 @@ const ChatInput = ({ onSend, disabled = false, placeholder = "اسأل عن أي
           >
             <ArrowUp size={22} />
           </button>
+ 
         </div>
+       </Link>
+       
       </form>
     </div>
   );

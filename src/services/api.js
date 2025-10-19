@@ -49,7 +49,7 @@ export const authAPI = {
 export const chatAPI = {
   startSession: () => api.post('/chat/session/start'),
   sendMessage: (sessionId, message) =>
-    api.post('/message', { session_id: sessionId, message }),
+    api.post('/chat/message', { session_id: sessionId, message }),
   getHistory: (sessionId) => api.get(`/chat/session/${sessionId}/history`),
   endSession: (sessionId) => api.post(`/chat/session/${sessionId}/end`),
   getUserSessions: () => api.get('/chat/sessions'),

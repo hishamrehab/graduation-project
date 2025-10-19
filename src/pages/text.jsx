@@ -161,7 +161,7 @@ const Chat = () => {
   const handleSuggestionClick = (suggestion) => {
     handleSendMessage(suggestion);
   };
-
+  
 
   return (
     <div className="flex h-[100vh] bg-gray-50 dark:bg-gray-900">
@@ -178,19 +178,28 @@ const Chat = () => {
         <Header onMenuClick={() => setSidebarOpen(!sidebarOpen)} />
 
         {/* Chat Area */}
-        <div className="flex-1 overflow-y-auto pb-32">
-          {messages.length === 0 ? (
-            /* Welcome Screen */
+        <div className="mt-5 sm:3 lg:8 p-10">
             <div className="h-full flex flex-col items-center justify-center p-4">
               <img src={logo} alt='' className='mb-3'/>
-              <div className="text-center mb-12 animate-fade-in">
-                <h1 className="text-3xl lg:text-4xl font-bold text-gray-800 dark:text-white mb-3">
-                  مرحباً بك في المساعد الذكي للمعهد
+              <div className="text-center mb-4 animate-fade-in">
+                
+                <h1 className="text-3xl lg:text-4xl font-bold text-gray-800 dark:text-white mb-6 leading-10">
+                  مرحباً بك في  لمعهد العالي للهندسة و التكنولوجيا بطنطا
+               
                 </h1>
                 <p className="text-xl lg:text-2xl text-gray-600 dark:text-gray-400">
-                  كيف يمكنني مساعدتك اليوم؟
+                  كيف يمكنني مساعدتك ؟
                 </p>
               </div>
+<div className='w-full'>
+ <ChatInput 
+          onSend={handleSendMessage} 
+          disabled={loading} 
+          centered={messages.length === 0}
+          isSidebarOpen={sidebarOpen}
+        />
+</div>
+  
 
               {/* Suggestion Pills */}
               <div className="flex flex-wrap gap-4 justify-center mb-12 max-w-4xl">
@@ -202,36 +211,13 @@ const Chat = () => {
                   />
                 ))}
               </div>
+
+
             </div>
-          ) : (
-            /* Messages */
-            <div className="max-w-5xl mx-auto p-4 lg:p-8">
-              {messages.map((msg, index) => (
-                <ChatMessage
-                  key={index}
-                  message={msg.message}
-                  sender={msg.sender}
-                />
-              ))}
-              {loading && (
-                <div className="flex gap-4 mb-6 justify-end">
-                  <div className="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-                    <div className="w-6 h-6 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
-                  </div>
-                </div>
-              )}
-              <div ref={messagesEndRef} />
-            </div>
-          )}
+       
         </div>
 
-        {/* Floating Input - Centered when no messages */}
-        <ChatInput 
-          onSend={handleSendMessage} 
-          disabled={loading} 
-          centered={messages.length === 0}
-          isSidebarOpen={sidebarOpen}
-        />
+     
       </div>
 
       {/* Search Modal */}
