@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Cairo', 'Tajawal', sans-serif;
+  direction: rtl;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0996D4;
+  color: #1883b5;
+ 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0996D4;
+}
+
+/* Smooth transitions */
+* {
+  transition: all 0.3s ease;
+}
+
+/* Focus styles */
+button:focus,
+input:focus,
+textarea:focus {
+  outline: none;
+  border: 0;
+  box-shadow: 0 0 0 3px #0996D4;
+}
+
+/* Animation keyframes */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+
+
+/* :root {
+    --primary: #0996D4;
+    --sec: #16263f;
+    --table-border: rgb(227 227 227);
+    --sec-color: #82DBD8;
+    --text: rgb(255 255 255 / 50%);
+    --Sec-text: rgb(255 255 255 / 80%);
+    --Sec-Bg: #fff;
+    --input-font: #848484; 
+    --tr-font: #fff;
+    --lable: #fff;
+    --lable-font: #3093fe;
+    --span-color: #e9ecef;
+    --black: #000;
+    --border: #ced4da;
+    --check: #F47526;
+    --border-shadow: #80bdff;
+    --footer: #fff;
+    --filter: #000;
+    --border-table: #ced4da;
+    --num: #fff;
+    --num-font: #000;
+    --activee: #007bff;
+    --search: #eee;
+    --card: #fff;
+    --num-border: #E9ECEF;
+    --input-bg: #fff;
+    --print: #64748B;
+    --btn-check: var(--primary);
+    --border-side: var(--text);
+    --small-icon: rgb(255 255 255 / 50%);
+} */
