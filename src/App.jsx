@@ -41,6 +41,8 @@ const PublicRoute = ({ children }) => {
 
 function App() {
   return (
+
+    <div className=' h-[100vh]'>
     <ErrorBoundary>
       <ThemeProvider>
         <Router>
@@ -89,6 +91,7 @@ function App() {
         </Router>
       </ThemeProvider>
     </ErrorBoundary>
+</div>
   );
 }
 

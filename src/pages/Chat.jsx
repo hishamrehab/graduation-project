@@ -164,7 +164,7 @@ const Chat = () => {
 
 
   return (
-    <div className="flex h-[100vh] bg-gray-50 dark:bg-gray-900">
+    <div className="flex  bg-gray-50 dark:bg-gray-900">
       {/* Sidebar */}
       <Sidebar
         isOpen={sidebarOpen}
@@ -178,11 +178,11 @@ const Chat = () => {
         <Header onMenuClick={() => setSidebarOpen(!sidebarOpen)} />
 
         {/* Chat Area */}
-        <div className="flex-1 overflow-y-auto pb-32">
+        <div className="flex-1 overflow-y-auto pb-80">
           {messages.length === 0 ? (
             /* Welcome Screen */
             <div className="h-full flex flex-col items-center justify-center p-4">
-              <img src={logo} alt='' className='mb-3'/>
+              <img src={logo} alt='' className='mb-8'width={150}/>
               <div className="text-center mb-12 animate-fade-in">
                 <h1 className="text-3xl lg:text-4xl font-bold text-gray-800 dark:text-white mb-3 loading-10">
                   مرحباً بك في المساعد الذكي للمعهد العالي للهندسه والتكنولوجيا بطنطا

@@ -50,7 +50,7 @@ const Sidebar = ({ isOpen, toggleSidebar, onSearchClick }) => {
 
       {/* Sidebar */}
       <aside
-        className={`fixed right-0 top-0 h-full bg-white dark:bg-gray-800 border-l-4 border-primary z-50 transition-all duration-300 ${
+        className={`fixed right-0 top-0 h-[100vh] bg-white dark:bg-gray-800 border-l-4 border-primary z-50 transition-all duration-300 ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         } lg:translate-x-0 lg:static ${
           isOpen ? 'w-64 lg:w-72' : 'lg:w-20'

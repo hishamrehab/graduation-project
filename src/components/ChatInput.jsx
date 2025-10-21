@@ -34,7 +34,7 @@ const ChatInput = ({ onSend, disabled = false, placeholder = "اسأل عن أي
 
   return (
     <div className={`fixed left-0 bg-gradient-to-t from-gray-50 dark:from-gray-900 via-gray-50 dark:via-gray-900 to-transparent pt-8 pb-6 px-4 transition-all duration-300 ease-out ${
-      centered ? 'top-[75%] -translate-y-1/2' : 'bottom-0'
+      centered ? 'top-[65%] -translate-y-1/2' : 'bottom-0'
     } ${
       isSidebarOpen ? 'lg:right-72' : 'lg:right-20'
     } right-14`}>
